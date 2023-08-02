@@ -12,16 +12,20 @@ export default function Card({ poke }) {
             .then(r => setdata(() => r))
     }, [])
     return (
-        <div className="card text-start">
-            <div className="card-body">
-                <h4 className="card-title">{poke.name}</h4>
-                {
-                    data && <LazyLoadImage src={data.sprites.front_default} />
-                }
-                <div>
-                    {data && data.types.map((el, i) => <Link to={`/dettaglio/${el.type.name}`} className="badge rounded-pill text-bg-dark" key={i}>{el.type.name}</Link>)}
+        <div className="col-12 col-md-4 my-1">
+            <div className="card text-start">
+                <div className="card-body">
+                    <h4 className="card-title">{poke.name}</h4>
+                    <div className="d-flex justify-content-center">
+                        {data && <LazyLoadImage src={data.sprites.front_default} />}
+                    </div>
+                    <div className="d-flex flex-column justify-content-center">
+                        <div className="d-flex justify-content-evenly my-2">
+                            {data && data.types.map((el, i) => <Link to={`/dettaglio/${el.type.name}`} className="badge rounded-pill text-bg-dark text-decoration-none mx-1" key={i}>{el.type.name}</Link>)}
+                        </div>
+                        <Link to={`/dettaglio/pokemon/${poke.url.split('pokemon/')[1].split('/')[0]}`} className="btn btn-success">dettaglio</Link>
+                    </div>
                 </div>
-                <Link to={`/dettaglio/pokemon/${poke.url.split('pokemon/')[1].split('/')[0]}`}>dettaglio</Link>
             </div>
         </div>
     )
