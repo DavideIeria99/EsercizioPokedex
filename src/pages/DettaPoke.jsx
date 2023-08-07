@@ -9,16 +9,13 @@ import { Context } from "../contexts/prefer";
 export default function DettaPoke() {
     const [data, setdata] = useState()
     const { id } = useParams()
-    const { color, HandleTheme } = useContext(Context)
+    const { Heats, prefer } = useContext(Context)
 
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
             .then(r => r.json())
             .then(r => setdata(() => r))
     }, [])
-
-    console.log(color);
-
     return (
         <>
             {/* <pre>{evo && JSON.stringify(evo, null, 4)}</pre> */}
@@ -32,7 +29,7 @@ export default function DettaPoke() {
                             data && <>
                                 <h2>Nome: {data.name}</h2>
                                 <h3>Altezza:{data.height}0 Cm</h3>
-                                <h4>Peso: {data.weight} Kg</h4>
+                                <h4>Peso: {data.weight} Hg</h4>
                                 <div className=" mt-5">
                                     <h5>type</h5>
                                     {data && data.types.map((el, i) =>
@@ -44,8 +41,8 @@ export default function DettaPoke() {
                                 </div>
                                 <div>
                                     <span>
-                                        <button onClick={HandleTheme} className="btn btn-success mx-2">preferiti</button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={color} className="bi bi-heart-fill" viewBox="0 0 16 16">
+                                        <button onClick={() => Heats(id)} className="btn btn-success mx-2">preferiti</button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={prefer.includes(id) ? "#000" : "#fff"} className="bi bi-heart-fill" viewBox="0 0 16 16">
                                             <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                                         </svg>
                                     </span>
