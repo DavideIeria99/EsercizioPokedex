@@ -4,6 +4,7 @@ import Root from "./pages/Root";
 // import Types from "./pages/Types";
 import Dettaglio, { loadPokeTypes } from "./pages/Dettaglio";
 import DettaPoke from "./pages/DettaPoke";
+import Preferiti from "./pages/Preferiti";
 
 
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         loader: loadTypes,
+      },
+      {
+        path: "/Preferiti",
+        element: <Preferiti />,
       },
       {
         path: "/dettaglio/:name",
