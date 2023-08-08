@@ -10,8 +10,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="container-fluid">
-        <Header />
+      <Header />
+      <div className="container-fluid mt-5 bg-warning">
         <Dropdown type={data} />
       </div >
     </>

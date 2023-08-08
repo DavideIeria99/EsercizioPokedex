@@ -22,22 +22,19 @@ export function ContextProvider(props) {
 
 
 
-    const [color, setColor] = useState('#000');
+
     const Heats = (id) => {
 
         const isInArray = prefer.findIndex((el) => el === id)
 
-        if (isInArray === -1 && color === '#000') {
+
+        if (isInArray === -1) {
             setPrefer((prev) => [...prev, id])
-            setColor(() => '#fff')
         } else {
             setPrefer(prev => prev.toSpliced(isInArray, 1))
-            setColor(() => '#000')
-
         }
         localStorage.setItem("prefer", JSON.stringify(prefer))
     }
-
     //riprendere il valore dal localStorage
 
     return (
