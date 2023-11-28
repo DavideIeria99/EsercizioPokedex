@@ -14,12 +14,16 @@ export default function DettaPoke() {
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
             .then(r => r.json())
-            .then(r => setdata(() => r))
+            .then(r => {
+                setdata(() => r);
+                console.log(r);
+            }
+            )
     }, [])
     return (
         <>
             {/* <pre>{evo && JSON.stringify(evo, null, 4)}</pre> */}
-            <div className="container mt-5 shadow">
+            <div className="container mt-5 shadow bg-light rounded">
                 <div className="row ">
                     <div className="col-12 col-md-6">
                         {data && <LazyLoadImage className="img-fluid w-50" src={data.sprites.front_default} />}

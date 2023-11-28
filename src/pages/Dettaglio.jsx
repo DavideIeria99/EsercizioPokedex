@@ -4,7 +4,8 @@ import Card from "../components/Card";
 export default function Dettaglio() {
     const data = useLoaderData();
     return (
-        <div className="container">
+        <div className="container 
+        ">
             <div className="row">
                 {data.map(el => <Card key={el.pokemon.name} poke={el.pokemon} />)}
             </div>

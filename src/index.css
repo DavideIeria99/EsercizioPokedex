@@ -1,0 +1,8 @@
+.backgroundCustom {
+	background-image: url("/src/Media/pokemon-1536855_1280.png");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
+}

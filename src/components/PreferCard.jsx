@@ -11,6 +11,7 @@ export default function PreferCard({ poke }) {
             .then(r => r.json())
             .then(r => setdata(() => r))
     }, [])
+    console.log(data);
     return (
         <div className="col-12 col-md-3 my-1">
             <div className="card text-start">

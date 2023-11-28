@@ -3,11 +3,20 @@
 import { Link } from "react-router-dom";
 
 export default function Dropdown({ type }) {
+
     return (
-        <div className="row shadow justify-content-evenly ">
+        <div className="row  justify-content-evenly">
             {
-                type.map(el => (<div className=" col-12 col-md-2 shadow text-center m-1 bg-light rounded " key={el.name}><Link className="fw-bold text-decoration-none   " to={`/dettaglio/${el.name}`}>{el.name}</Link></div>))
+                type.map(el => (
+                    <Link className=" col-12 col-md-2 shadow p-2
+                     bg-light text-center  m-1 rounded text-decoration-none" key={el.name} to={`/dettaglio/${el.name}`}>
+                        <div className="">
+                            <p className="fw-bold m-0">{el.name}</p>
+                        </div>
+                    </Link>
+                ))
             }
+
         </div>
     )
 }

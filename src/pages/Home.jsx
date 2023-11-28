@@ -9,13 +9,14 @@ export default function Home() {
 
 
   return (
-    <>
+    <div className='container-fluid'>
       <Header />
-      <div className="container-fluid mt-5 bg-warning">
+      <div className="container rounded py-3 mt-5 bg-warning">
         <Dropdown type={data} />
       </div >
-    </>
+    </div>
   )
+
 }
 
 export async function loadTypes() {
