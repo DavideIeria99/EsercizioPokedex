@@ -27,7 +27,8 @@ export default function Card({ poke }) {
                         <div className="d-flex justify-content-evenly my-2">
                             {data && data.types.map((el, i) => <Link to={`/dettaglio/${el.type.name}`} className="badge rounded-pill text-bg-dark text-decoration-none mx-1" key={i}>{el.type.name}</Link>)}
                         </div>
-                        <Link to={`/dettaglio/pokemon/${poke.url.split('pokemon/')[1].split('/')[0]}`} className="btn btn-success">dettaglio</Link>
+                        {/* <Link to={`/dettaglio/pokemon/${poke.url.split('pokemon/')[1].split('/')[0]}`} className="btn btn-success">dettaglio</Link> */}
+                        <Link to={`/dettaglio/pokemon/${poke.name}`} className="btn btn-success">dettaglio</Link>
                     </div>
                 </div>
             </div>

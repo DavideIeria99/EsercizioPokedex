@@ -4,8 +4,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useParams } from "react-router-dom";
 import { Context } from "../contexts/prefer";
 
-
-
 export default function DettaPoke() {
     const [data, setdata] = useState()
     const { id } = useParams()
