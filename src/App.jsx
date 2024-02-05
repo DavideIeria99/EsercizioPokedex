@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home, { loadTypes } from "./pages/Home";
+import Home from "./pages/Home";
 import Root from "./pages/Root";
 // import Types from "./pages/Types";
 import Dettaglio, { loadPokeTypes } from "./pages/Dettaglio";
@@ -16,8 +16,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
-        loader: loadTypes,
+        element: <Home />
       },
       {
         path: "/Preferiti",

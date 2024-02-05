@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
 import { useLoaderData, useParams } from "react-router-dom";
-import Card from "../components/Card";
+import Card from "../components/Card/Card";
+
 export default function Dettaglio() {
     const type = useParams()
     const data = useLoaderData();

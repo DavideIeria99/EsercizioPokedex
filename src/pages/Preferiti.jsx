@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Context } from "../contexts/prefer";
-import PreferCard from "../components/PreferCard";
+import PreferCard from "../components/PreferCard/PreferCard";
+
 
 export default function Preferiti() {
 
