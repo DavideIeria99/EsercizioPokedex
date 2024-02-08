@@ -7,37 +7,40 @@ import Button from "../Button/Button"
 
 /* eslint-disable react/prop-types */
 export default function Card({ poke }) {
-    const [data, setdata] = useState()
+    const [data, setdata] = useState();
+    const [img, setImg] = useState();
     const { prefer } = useContext(Context)
+    const backGround = prefer.includes(poke) ? "bg-warning card-body" : "card-body";
     useEffect(() => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${poke.name}`)
+        fetch(`https://pokeapi.co/api/v2/pokemon/${poke}`)
             .then(r => r.json())
-            .then(r => setdata(() => r))
+            .then(r => {
+                setdata(r);
+                setImg(r.sprites.other.dream_world.front_default);
+            })
     }, [])
-
-    console.log(poke);
     return (
-        <div className="col-12 col-md-4 my-1">
-            <div className="card text-start">
-                <div className={prefer.includes(poke.name) ? "card-body bg-warning" : "card-body"}>
-                    <h4 className="card-title">{poke.name}</h4>
-                    <div className="d-flex justify-content-center">
-                        {data && <LazyLoadImage src={data.sprites.front_default} />}
-                    </div>
-                    <div className="d-flex flex-column justify-content-center">
-                        <div className="d-flex justify-content-evenly my-2">
-                            {data && data.types.map((el, i) =>
-                                <Link to={`/dettaglio/${el.type.name}`} className="badge  text-decoration-none mx-1" key={i}>
-                                    <Button type={el.type.name} />
-                                </Link>
-                            )}
-                        </div>
-                        {/* <Link to={`/dettaglio/pokemon/${poke.url.split('pokemon/')[1].split('/')[0]}`} className="btn btn-success">dettaglio</Link> */}
-                        <Link to={`/dettaglio/pokemon/${poke.name}`} className="btn btn-success">dettaglio</Link>
-                    </div>
-                </div>
+        <div className={"container card " + backGround} style={{ height: "22rem" }}>
+            <div className="row ">
+                <section className="col-12">
+                    <h4 >{poke}</h4>
+                </section>
+                <section className="col-12 d-flex justify-content-center " style={{ height: "10rem" }}>
+                    {data && <LazyLoadImage className="img-fluid" src={img ?? data.sprites.front_default} />}
+                </section>
+                <section className="col-12 d-flex justify-content-evenly my-2 ">
+                    {data && data.types.map((el, i) =>
+                        <Link to={`/dettaglio/${el.type.name}`} className="badge  text-decoration-none mx-1" key={i}>
+                            <Button type={el.type.name} />
+                        </Link>
+                    )}
+                </section>
+                <section className="col-12">
+                    {/* <Link to={`/dettaglio/pokemon/${poke.url.split('pokemon/')[1].split('/')[0]}`} className="btn btn-success">dettaglio</Link> */}
+                    <Link to={`/dettaglio/pokemon/${poke}`} className=" d-block btn btn-success">dettaglio</Link>
+                </section>
             </div>
-        </div>
+        </div >
     )
 }
 

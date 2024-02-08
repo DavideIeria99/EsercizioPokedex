@@ -5,6 +5,9 @@ import Root from "./pages/Root";
 import Dettaglio, { loadPokeTypes } from "./pages/Dettaglio";
 import DettaPoke from "./pages/DettaPoke";
 import Preferiti from "./pages/Preferiti";
+import { HelmetProvider } from "react-helmet-async";
+import Regions, { loadPokeRegion } from "./pages/Regions";
+
 
 
 
@@ -31,10 +34,22 @@ const router = createBrowserRouter([
         path: "/dettaglio/pokemon/:id",
         element: <DettaPoke />,
       },
+      {
+        path: "/region/:name",
+        element: <Regions />,
+        loader: loadPokeRegion,
+      },
+
     ],
   },
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+
+  return (
+    <HelmetProvider>
+      < RouterProvider router={router} />
+    </HelmetProvider>
+
+  )
 }

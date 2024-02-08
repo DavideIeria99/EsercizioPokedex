@@ -63,7 +63,7 @@ export default function Button({ type }) {
                 setColor('#F0B6BC')
                 break;
             default:
-                setColor("")
+                setColor("#E41F25")
                 break;
         }
     }, [])
