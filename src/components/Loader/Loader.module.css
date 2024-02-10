@@ -1,0 +1,15 @@
+.transition_circle {
+	animation: RotPoke 1s linear infinite;
+}
+
+@keyframes RotPoke {
+	0% {
+		transform: rotate(0);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

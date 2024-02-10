@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from 'react-router-dom'
 import Button from '../components/Button/Button';
 import Card from '../components/Card/Card';
 import TitleName from '../Utilities/Helmets/TitleName';
+import Loader from '../components/Loader/Loader';
 
 export default function Regions() {
     const { name } = useParams();
@@ -31,7 +32,7 @@ export default function Regions() {
                 ))}
             </section>
             {
-                loading ? (<h1>Loading...</h1>)
+                loading ? <Loader />
                     :
                     (
                         <section className='row my-3'>

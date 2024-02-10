@@ -5,16 +5,6 @@ import { Link } from "react-router-dom";
 export default function Search() {
     const [search, setSearch] = useState('');
 
-    // const submitPoke = async (e) => {
-    //     setData('');
-    //     await fetch(`https://pokeapi.co/api/v2/pokemon/${search}`)
-    //         .then(r => r.json())
-    //         .then((data) => setData(data))
-    //     navigate(`/search/${search}`)
-    //     setSearch('');
-    // }
-
-
     return (
         <div className="d-flex p-3 ">
             <input
@@ -25,7 +15,7 @@ export default function Search() {
                 onChange={(e) => setSearch(e.target.value)}
             />
             {search ? (
-                <Link to={`/dettaglio/pokemon/${search}`} className="text-decoration-none ms-2" >
+                <Link to={`/dettaglio/pokemon/${search.toLowerCase()}`} className="text-decoration-none ms-2" >
                     <button type="submit" className="btn btn-outline-success" onClick={() => setSearch('')}>
                         Search
                     </button>
