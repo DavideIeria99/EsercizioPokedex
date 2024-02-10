@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Button from "../Button/Button";
+import Search from "../Search/Search";
 
 export default function Navbars() {
   const [data, setData] = useState("");
@@ -19,13 +20,14 @@ export default function Navbars() {
 
   return (
 
-    <nav className="navbar justify-content-evenly gradientNav ">
-      <div className="container-fluid">
-        <span className="navbar-brand" >
+    <nav className="gradientNav container-fluid ">
+      <div className="row justify-content-between">
+        <span className="navbar-brand col-3 p-3" >
           <img src="./../../Media/pokemon.png" alt="Logo" width="25" height="25" className="d-inline-block align-text-top rounded me-1" />
           Pokemon
         </span>
-        <div className="nav mx-auto d-flex justify-between">
+        <div className="nav col-3 d-flex p-3 ">
+
           <Link to="/" className="nav-link  fw-bold text-decoration-none text-dark" >
             <h6>
               HOME
@@ -54,6 +56,9 @@ export default function Navbars() {
             </div>
 
           ) : ""}
+        </div>
+        <div className="col-3">
+          <Search />
         </div>
       </div>
     </nav>

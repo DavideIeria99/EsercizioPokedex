@@ -13,7 +13,7 @@ export default function Type() {
             .then((data) => setData(data.results.splice(0, 18)))
     }, [])
     return (
-        <div className="row justify-content-evenly">
+        <div className="row justify-content-evenly bg-warning  rounded py-3">
             <h2 className="text-center text-light">Type</h2>
             {data &&
                 data.map(el => (

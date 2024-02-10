@@ -16,13 +16,11 @@ export default function Home() {
       <div className='container-fluid'>
         <Header />
       </div>
-      <div className="container rounded py-3  bg-warning">
+      <div className="container">
         <Type />
-      </div >
-      <div className="container rounded py-3 my-3  bg-info">
-
         <Region />
       </div >
+
     </>
   )
 

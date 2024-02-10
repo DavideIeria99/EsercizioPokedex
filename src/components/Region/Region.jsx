@@ -14,7 +14,7 @@ export default function Region() {
     }, [])
 
     return (
-        <div className="row justify-content-evenly">
+        <div className="row justify-content-evenly bg-info  rounded py-3 my-3">
             <h2 className="text-center text-light">Region</h2>
             {data &&
                 data.map(el => (
