@@ -39,6 +39,7 @@ export default function Regions() {
                             <h3 className='text-light'>total:{poke.length}</h3>
                             {poke && poke.map((el) => (
                                 <>
+
                                     <div key={el.name} className='col-12 col-md-3 my-2'>
                                         <Card poke={el.pokemon_species.name} />
                                     </div>
