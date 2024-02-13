@@ -15,7 +15,7 @@ export default function Search() {
                 onChange={(e) => setSearch(e.target.value)}
             />
             {search ? (
-                <Link to={`/dettaglio/pokemon/${search.toLowerCase()}`} className="text-decoration-none ms-2" >
+                <Link to={`/searched/${search.toLowerCase()}`} className="text-decoration-none ms-2" >
                     <button type="submit" className="btn btn-outline-success" onClick={() => setSearch('')}>
                         Search
                     </button>

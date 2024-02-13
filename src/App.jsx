@@ -9,6 +9,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Regions, { loadPokeRegion } from "./pages/Regions";
 
 import Error from "./pages/Error";
+import Searched from "./pages/Searched";
 
 
 
@@ -43,8 +44,10 @@ const router = createBrowserRouter([
         element: <Regions />,
         loader: loadPokeRegion,
       },
-
-
+      {
+        path: "/searched/:name",
+        element: <Searched />,
+      },
     ],
   },
 ]);

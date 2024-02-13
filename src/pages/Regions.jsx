@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
 import Button from '../components/Button/Button';
 import Card from '../components/Card/Card';
 import TitleName from '../Utilities/Helmets/TitleName';
 import Loader from '../components/Loader/Loader';
+
 
 export default function Regions() {
     const { name } = useParams();
@@ -11,6 +12,9 @@ export default function Regions() {
     const [poke, setPoke] = useState("");
     const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+        setPoke('');
+    }, [data])
     const Pokedex = async (url) => {
         setLoading(true)
         setPoke('');

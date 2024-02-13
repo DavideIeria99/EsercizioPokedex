@@ -1,0 +1,3 @@
+- inserire il filter che va in base alle lettere
+- sezione leggendari;
+- aggiungere una pagina dove ci sono tutti i pokemone

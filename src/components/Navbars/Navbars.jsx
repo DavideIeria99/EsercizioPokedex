@@ -25,8 +25,8 @@ export default function Navbars() {
 
   return (
 
-    <nav className="gradientNav container-fluid ">
-      <div className="row justify-content-between">
+    <nav className="gradientNav container-fluid sticky-top ">
+      <div className="row justify-content-between ">
         <span className="navbar-brand col-3 p-3" >
           <img src="./../../Media/pokemon.png" alt="Logo" width="25" height="25" className="d-inline-block align-text-top rounded me-1" />
           Pokemon

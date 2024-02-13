@@ -9,7 +9,7 @@ export default function Dettaglio() {
     const data = useLoaderData();
 
     return (
-        <div className="container">
+        <div className="container min-vh-100">
             <TitleName title={'details'} />
 
             <div className="my-2 text-light">

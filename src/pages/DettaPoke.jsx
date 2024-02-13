@@ -12,13 +12,17 @@ export default function DettaPoke() {
     const [loading, setloading] = useState(true);
     const { Heats, prefer } = useContext(Context)
     const [img, setImg] = useState('');
+    const [speces, setSpeces] = useState('');
 
     useEffect(() => {
         setloading(true)
         setImg(data.sprites.other.dream_world.front_default)
-        // setloading(false)
+        fetch(`https://pokeapi.co/api/v2/pokemon-species/${data.name}`)
+            .then(r => r.json())
+            .then(data => setSpeces(data))
         setTimeout(() => setloading(false), 1000)
     }, [data])
+    console.log(speces);
 
     return (
         <>
@@ -42,6 +46,11 @@ export default function DettaPoke() {
                                                         <h2>Name: {data.name}</h2>
                                                         <h3>Height:{data.height * 10} cm</h3>
                                                         <h4>Weight: {data.weight / 10} kg</h4>
+                                                        <div className="d-flex justify-content-evenly">
+                                                            <h5>Legendary: {speces.is_legendary ? "yes" : 'no'} </h5>
+                                                            <h5>Mythical: {speces.is_mythical ? "yes" : 'no'} </h5>
+
+                                                        </div>
                                                         <div className="my-3">
                                                             <span>
                                                                 <button onClick={() => Heats(data.name)} className="btn btn-info mx-2">Favorite</button>
