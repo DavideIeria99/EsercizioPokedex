@@ -70,9 +70,9 @@ export default function Button({ type }) {
 
 
     return (
-        <div style={{ background: color }}
-            className="button shadow text-center p-3  rounded  text-white">
+        <button style={{ background: color }}
+            className="button shadow text-center p-3  rounded border-0 w-100 my-2 text-white">
             <p className="fw-bold m-0">{type}</p>
-        </div>
+        </button>
     )
 }

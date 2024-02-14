@@ -49,7 +49,6 @@ export default function DettaPoke() {
                                                         <div className="d-flex justify-content-evenly">
                                                             <h5>Legendary: {speces.is_legendary ? "yes" : 'no'} </h5>
                                                             <h5>Mythical: {speces.is_mythical ? "yes" : 'no'} </h5>
-
                                                         </div>
                                                         <div className="my-3">
                                                             <span>
@@ -60,6 +59,18 @@ export default function DettaPoke() {
                                                             </span>
                                                         </div>
                                                     </div>
+                                                    {/* <div className="col-12">
+                                                        <h2>pokedex</h2>
+                                                        <div className="row justify-content-between">
+                                                            {
+                                                                speces && speces.pokedex_numbers.map((el) => {
+                                                                    return (
+                                                                        <li className="col-3 m-3" key={el.entry_number}>{el.pokedex.name}</li>
+                                                                    )
+                                                                })
+                                                            }
+                                                        </div>
+                                                    </div> */}
 
                                                     <div className="col-12 col-md-6 row ">
                                                         <h5>type</h5>

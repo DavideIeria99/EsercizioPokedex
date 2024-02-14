@@ -1,9 +1,12 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 
 
 export default function Search() {
     const [search, setSearch] = useState('');
+    useEffect(() => {
+        setSearch('')
+    }, [])
 
     return (
         <div className="d-flex p-3 ">

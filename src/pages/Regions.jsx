@@ -28,9 +28,11 @@ export default function Regions() {
             <TitleName title={name} />
 
             <h1>{name}</h1>
+            <h3 className='text-light'>total:{poke.length}</h3>
+
             <section className='row bg-info justify-content-around p-4 rounded shadow'>
                 {data && data.map((el) => (
-                    <div onClick={() => Pokedex(el.url)} className='col-12 col-md-3' key={el.name}>
+                    <div onClick={() => Pokedex(el.url)} className='col-12 col-md-3 m-2' key={el.name}>
                         <Button type={el.name} />
                     </div>
                 ))}
@@ -40,7 +42,6 @@ export default function Regions() {
                     :
                     (
                         <section className='row my-3'>
-                            <h3 className='text-light'>total:{poke.length}</h3>
                             {poke && poke.map((el) => (
                                 <>
 

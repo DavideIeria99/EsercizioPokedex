@@ -40,7 +40,7 @@ export default function Navbars() {
               <ul className="dropdown-menu gradientNav overflowCustom px-2 " >
                 {
                   region && region.map((region) => (
-                    <Link to={`/region/${region.name}`} key={region.name} className="p-1 m-1 text-decoration-none">
+                    <Link to={`/region/${region.name}`} key={region.name} className="p-1  text-decoration-none">
                       <Button type={region.name} />
                     </Link>
                   ))
@@ -68,7 +68,7 @@ export default function Navbars() {
               <ul className="dropdown-menu gradientNav overflowCustom px-2 " >
                 {
                   data && data.map((type) => (
-                    <Link to={`/dettaglio/${type.name}`} key={type.name} className="p-1 m-1 text-decoration-none">
+                    <Link to={`/dettaglio/${type.name}`} key={type.name} className="p-1  text-decoration-none">
                       <Button type={type.name} />
                     </Link>
                   ))

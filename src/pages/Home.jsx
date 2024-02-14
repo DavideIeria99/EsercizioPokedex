@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <TitleName title={'pokemon'} />
-      <div className='container-fluid'>
+      <div className='container'>
         <Header />
       </div>
       <div className="container">
