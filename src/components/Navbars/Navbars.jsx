@@ -9,6 +9,7 @@ export default function Navbars() {
   const [title, setTitle] = useState('');
 
 
+
   useEffect(() => {
     setInterval(() => {
       setTitle(document.title)
@@ -24,62 +25,68 @@ export default function Navbars() {
   }, [])
 
   return (
-
-    <nav className="gradientNav container-fluid sticky-top ">
-      <div className="row justify-content-between ">
+    <nav className="navbar navbar-expand-lg gradientNav sticky-top">
+      <div className="container-fluid">
         <span className="navbar-brand col-3 p-3" >
           <img src="./../../Media/pokemon.png" alt="Logo" width="25" height="25" className="d-inline-block align-text-top rounded me-1" />
           Pokemon
         </span>
-        <div className="d-flex justify-content-evenly col-5 pt-4 ">
-          {title !== 'pokemon' ? (
-            <div className="nav-link dropdown fw-bold text-decoration-none text-dark">
-              <h6 className=" dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                REGION
+        <button className="navbar-toggler" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded='false'
+          aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0" >
+            {title !== 'pokemon' ? (
+              <div className="nav-link dropdown fw-bold text-decoration-none text-dark">
+                <h6 className=" dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  REGION
+                </h6>
+                <ul className="dropdown-menu gradientNav overflowCustom px-2 " >
+                  {
+                    region && region.map((region) => (
+                      <Link to={`/region/${region.name}`} key={region.name} className="p-1  text-decoration-none" >
+                        <Button type={region.name} />
+                      </Link>
+                    ))
+                  }
+                </ul>
+              </div>
+            ) : ""}
+            <Link to="/" className="nav-link fw-bold text-decoration-none text-dark" >
+              <h6>
+                HOME
               </h6>
-              <ul className="dropdown-menu gradientNav overflowCustom px-2 " >
-                {
-                  region && region.map((region) => (
-                    <Link to={`/region/${region.name}`} key={region.name} className="p-1  text-decoration-none">
-                      <Button type={region.name} />
-                    </Link>
-                  ))
-                }
-              </ul>
-            </div>
-
-          ) : ""}
-          <Link to="/" className="nav-link  fw-bold text-decoration-none text-dark" >
-            <h6>
-              HOME
-            </h6>
-          </Link>
-
-          <Link to="/Preferiti" className=" nav-link fw-bold text-decoration-none text-dark" >
-            <h6>
-              FAVORITE
-            </h6>
-          </Link>
-          {title !== 'pokemon' ? (
-            <div className="nav-link dropdown fw-bold text-decoration-none text-dark">
-              <h6 className=" dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                TYPE
+            </Link>
+            <Link to="/Preferiti" className=" nav-link fw-bold text-decoration-none text-dark" >
+              <h6>
+                FAVORITE
               </h6>
-              <ul className="dropdown-menu gradientNav overflowCustom px-2 " >
-                {
-                  data && data.map((type) => (
-                    <Link to={`/dettaglio/${type.name}`} key={type.name} className="p-1  text-decoration-none">
-                      <Button type={type.name} />
-                    </Link>
-                  ))
-                }
-              </ul>
-            </div>
-
-          ) : ""}
-        </div>
-        <div className="col-3">
-          <Search />
+            </Link>
+            {title !== 'pokemon' ? (
+              <div className="nav-link dropdown fw-bold text-decoration-none text-dark">
+                <h6 className=" dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  TYPE
+                </h6>
+                <ul className="dropdown-menu gradientNav overflowCustom px-2 " >
+                  {
+                    data && data.map((type) => (
+                      <Link to={`/dettaglio/${type.name}`} key={type.name} className="p-1  text-decoration-none">
+                        <Button type={type.name} />
+                      </Link>
+                    ))
+                  }
+                </ul>
+              </div>
+            ) : ""}
+          </ul>
+          <div className="col-12 col-md-5">
+            <Search />
+          </div>
         </div>
       </div>
     </nav>
